@@ -297,7 +297,9 @@ resource "aws_iam_role_policy_attachment" "lambda_policy1" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
+
 ### Lambda Cont. ### 
+
 
 # Lambda (UpdateItem) - Zip Python Script for "DDB-UpdateItem.py"
 
@@ -342,7 +344,6 @@ resource "aws_lambda_function" "CR-Lambda-DDB-UpdateItem" {
   }
 
 }
-
 
 # Lambda (UpdateItem) - CW Logs
 
@@ -393,18 +394,6 @@ resource "aws_iam_role_policy_attachment" "lambda_policy2" {
 }
 
 
-
-
-
-
-
-
-
-# CloudFront - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution
-
-# To Do: Update Python Script to include DDB Table Name. Going to hardcode this.
-#   Was going to hardcode. But remembered about env variables in Lambda. got it to work ;)
-
 ### Outputs ### 
 
 output "Name_of_Bucket" {
@@ -426,3 +415,11 @@ output "Lambda_GetItem" {
 output "Lambda_UpdateItem" {
   value = aws_lambda_function.CR-Lambda-DDB-UpdateItem.id
 }
+
+
+### TO DOs ###
+
+# To Do: Update Python Script to include DDB Table Name. Going to hardcode this.
+#   Was going to hardcode. But remembered about env variables in Lambda. got it to work ;)
+
+# CloudFront Setup 
