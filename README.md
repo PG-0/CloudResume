@@ -25,7 +25,7 @@ There are 16 parts to the challenge that revolve around using AWS services
 
 10. [Completed] Python - You will need to write a bit of code in the Lambda function; you could use more Javascript, but it would be better for our purposes to explore Python – a common language used in back-end programs and scripts – and its boto3 library for AWS. Here is a good, free Python tutorial.
 
-11. [To-Do] Tests You should also include some tests for your Python code. Here are some resources on writing good Python tests.
+11. [Completed] Tests You should also include some tests for your Python code. Here are some resources on writing good Python tests.
 
 12. [Completed] IaC - You should not be configuring your API resources – the DynamoDB table, the API Gateway, the Lambda function – manually, by clicking around in the AWS console. Instead, define them in an AWS Serverless Application Model (SAM) template and deploy them using the AWS SAM CLI. This is called “infrastructure as code” or IaC. It saves you time in the long run.
 
