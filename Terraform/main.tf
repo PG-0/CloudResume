@@ -17,16 +17,14 @@ provider "aws" {
 variable "bucket-name" {
   type = string
   nullable = false
-  # Delete default this after testing
-  default = "sdfsfadf-234123412143242"
+  default = "CR-Bucket-234123"
   description = "Enter unique name for the bucket and can consist only of lowercase letters, numbers, dots "
 }
 
 variable "DDB-name" {
   type = string
   nullable = false
-  # Delete default this after testing
-  default = "CR-DDB-Default"
+  default = "CR-DDB-Visitor"
   description = "Enter a name for the DDB table"
 }
 
@@ -410,9 +408,9 @@ output "Lambda_UpdateItem" {
 
 ### TO DOs ###
 
-# Update Python Script to include DDB Table Name. Going to hardcode this.
+# [Done]Update Python Script to include DDB Table Name. Going to hardcode this.
 #   Was going to hardcode. But remembered about env variables in Lambda. got it to work ;)
 
 # CloudFront Setup 
 
-# Upload Files to S3 Bucket
+# Upload Web_Files to S3 Bucket
