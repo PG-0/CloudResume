@@ -3,6 +3,9 @@ import boto3
 import os
 from decimal import Decimal
 
+# We import decimal and use the encoder to "clean" the data into a format that JSON accepts. 
+# Without it, the code will return a decimal value that isn't compatiable with JSON
+
 class DecimalEncoder(json.JSONEncoder):
   def default(self, obj):
     if isinstance(obj, Decimal):

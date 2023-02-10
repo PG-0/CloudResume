@@ -419,7 +419,7 @@ output "Lambda_UpdateItem" {
 
 ### TO DOs ###
 
-# To Do: Update Python Script to include DDB Table Name. Going to hardcode this.
+# Update Python Script to include DDB Table Name. Going to hardcode this.
 #   Was going to hardcode. But remembered about env variables in Lambda. got it to work ;)
 
 # CloudFront Setup 

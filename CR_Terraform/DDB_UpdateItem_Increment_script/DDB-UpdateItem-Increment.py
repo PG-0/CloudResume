@@ -2,7 +2,6 @@ import boto3
 import json
 import os
 
-
 def lambda_handler(event, context):
 
     # Get the DDB service resource
@@ -25,20 +24,3 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('Successfully Updated DynamoDB Table CR-Counter.'),
     }
-
-# ---
-# Breaking Down the below code
-# Keep in mind the depdencies of getting the DDB resource  and table above
-# ---
-    # response = table.update_item(  ---> We are creating a variable 'response'
-    #     Key={'visitorID': 'visitor-x'},   ---> # We are calling the table and using the update item API for DDB
-    #     UpdateExpression="SET visit_count = visit_count + :inc",
-    #     ExpressionAttributeValues={':inc': 1},
-    #     ReturnValues="UPDATED_NEW",
-
-
-
-
-
-# The 'Key' attribute specifies the tables PK so we specify which record/item to update
-# The 'UpdateExpression' 
