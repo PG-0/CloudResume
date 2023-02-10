@@ -131,8 +131,7 @@ resource "aws_apigatewayv2_api" "CR-API-GW" {
   protocol_type   = "HTTP"
   description     = "API GW created from Terraform."
   target          = aws_lambda_function.CR-Lambda-DDB-GetItem.arn
-  # target          = "HTTP Proxy" #!! Problem Area
-  # route_key       = "GET /update" 
+
   cors_configuration {
     allow_methods = ["GET"]
     allow_origins = [ "*" ]
