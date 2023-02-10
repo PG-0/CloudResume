@@ -169,8 +169,6 @@ resource "aws_lambda_permission" "api_gw1" {
   source_arn = "${aws_apigatewayv2_api.CR-API-GW.execution_arn}/*/*"
 }
 
-
-
 # API GW - Create Route 2 for Update Item
 resource "aws_apigatewayv2_integration" "CR-API-GW-Route2" {
   api_id             = aws_apigatewayv2_api.CR-API-GW.id
@@ -198,11 +196,6 @@ resource "aws_lambda_permission" "api_gw2" {
 
   source_arn = "${aws_apigatewayv2_api.CR-API-GW.execution_arn}/*/*"
 }
-
-
-### CloudFront ###
-
-
 
 ### Lambda ####
 
@@ -297,9 +290,7 @@ resource "aws_iam_role_policy_attachment" "lambda_policy1" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-
 ### Lambda Cont. ### 
-
 
 # Lambda (UpdateItem) - Zip Python Script for "DDB-UpdateItem.py"
 
@@ -423,3 +414,5 @@ output "Lambda_UpdateItem" {
 #   Was going to hardcode. But remembered about env variables in Lambda. got it to work ;)
 
 # CloudFront Setup 
+
+# Upload Files to S3 Bucket
