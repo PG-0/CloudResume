@@ -25,5 +25,5 @@ jobs:
         run: python -c "import sys; print(sys.version)"
 
       - name: Test GetItem Python Script
-        #working-directory: ./CloudResume/Python_Scripts
-        run: cd CloudResume && pytest
+        working-directory: CloudResume
+        run: pytest
