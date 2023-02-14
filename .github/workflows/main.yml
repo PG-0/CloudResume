@@ -13,9 +13,16 @@ jobs:
         uses: actions/setup-python@v4
         with:
           # Semantic version range syntax or exact version of a Python version
-          python-version: '3.x'
+          python-version: '3.9'
           # Optional - x64 or x86 architecture, defaults to x64
           architecture: 'x64'
       # You can test your matrix by printing the current Python version
-      - name: Display Python version
+      - name: Install Python Packages
+        run: | 
+          python -m pip install --upgrade pip
+
+      - name: Test GetItem Python Script
+        run: cd Python_Scripts && 
+        
+      - name: Test UpdateItem Python Script
         run: python -c "import sys; print(sys.version)"
