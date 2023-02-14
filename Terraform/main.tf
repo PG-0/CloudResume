@@ -37,6 +37,7 @@ resource "aws_s3_bucket" "CR-bucket" {
   tags = {
     Name = "CR-Bucket"
     Environment = "Prod"
+    Terraform = "True"
   }
 
 }
@@ -106,7 +107,8 @@ resource "aws_dynamodb_table" "CR-DDB-table" {
 
   tags = {
     Name        = "CR-DDB-Table"
-    Environment = "production"
+    Environment = "Prod"
+    Terraform   = "True"
   }
 }
 
@@ -136,6 +138,11 @@ resource "aws_apigatewayv2_api" "CR-API-GW" {
     allow_methods = ["GET"]
     allow_origins = [ "*" ]
   }
+  tags = {
+    Environment = "Prod"
+    Terraform   = "True"
+  }
+
 }
 
 # API GW - Create Route 1 for Get Item
@@ -237,6 +244,11 @@ resource "aws_lambda_function" "CR-Lambda-DDB-GetItem" {
       DDB_table = "${aws_dynamodb_table.CR-DDB-table.name}"
     }
   }
+
+  tags = {
+    Environment = "Prod"
+    Terraform   = "True"
+  }
 }
 
 # Lambda (GetItem) - CW Logs
@@ -329,6 +341,11 @@ resource "aws_lambda_function" "CR-Lambda-DDB-UpdateItem" {
     variables = {
       DDB_table = "${aws_dynamodb_table.CR-DDB-table.name}"
     }
+  }
+
+  tags = {
+    Environment = "Prod"
+    Terraform   = "True"
   }
 
 }
