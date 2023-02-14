@@ -13,17 +13,13 @@ jobs:
         with:
           # Semantic version range syntax or exact version of a Python version
           python-version: '3.9'
-          # Optional - x64 or x86 architecture, defaults to x64
-          architecture: 'x64'
+
       # You can test your matrix by printing the current Python version
       - name: Install Python Dependencies 
         run: | 
           python -m pip install --upgrade pip
           pip install requests pytest
 
-      - name: Test UpdateItem Python Script
-        run: python -c "import sys; print(sys.version)"
-
-      - name: Test GetItem Python Script
-        working-directory: Python_Scripts/
+      - name: Test Python Scripts
+        working-directory: Python_Scripts/ #Setting up where to run the pytest
         run: pytest
