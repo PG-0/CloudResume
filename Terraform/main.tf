@@ -28,6 +28,16 @@ variable "DDB-name" {
   description = "Enter a name for the DDB table"
 }
 
+# This should initialize a variable that contains a list of the Web files needed
+variable "S3_files_to_upload" {
+  type = list(string)
+  default = [
+    "CloudResume/Web_Files/index.html",
+    "CloudResume/Web_Files/error.html",
+    "CloudResume/Web_Files/BSstyle.css"
+  ]
+}
+
 ### S3 ###
 
 # S3 - Create
@@ -90,6 +100,14 @@ resource "aws_s3_bucket_policy" "allow_access_from_CF" {
 }
 
 ## S3 TODO - Upload Files ##
+
+resource "aws_s3_bucket_object" "Web-Files" {
+  for_each = toset(var.S3_files_to_upload)
+
+  bucket = aws_s3_bucket.CR-bucket.id
+  key = "example/${basename(each.value)}"
+  source = each.value
+}
 
 ### DDB ###
 
