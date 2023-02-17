@@ -1,26 +1,47 @@
 name: main
 
-on: [push] # on event that tells Github when to run workflow
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: 'us-east-1'
 
-    #Steps are the actions to be performed after a push 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Set up Python 3.9
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
-          # Semantic version range syntax or exact version of a Python version
           python-version: '3.9'
 
-      # Setup Dependencies. PIP & Pytest
-      - name: Install Python Dependencies 
-        run: | 
+      - name: Install Python Dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install requests pytest
-      # Let GitHub know where the scripts are and what to run. Pytest :)
+
       - name: Test Python Scripts
-        working-directory: Python_Scripts/ #Setting up where to run the pytest
+        working-directory: Python_Scripts/
         run: pytest
+
+      # Workflow dispatch to deploy Terraform infrastructure
+      # This step is only executed after pytest is passed and the manual deployment is initiated
+      - name: Deploy Terraform
+        if: success() && github.event_name == 'workflow_dispatch'
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: '1.1.0'
+      - name: Terraform Init
+        if: success() && github.event_name == 'workflow_dispatch'
+        run: terraform init
+      - name: Terraform Plan
+        if: success() && github.event_name == 'workflow_dispatch'
+        run: terraform plan
+      # - name: Terraform Apply
+      #   if: success() && github.event_name == 'workflow_dispatch'
+      #   run: terraform apply -auto-approve
