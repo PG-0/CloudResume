@@ -446,5 +446,3 @@ output "Lambda_UpdateItem" {
 #   Was going to hardcode. But remembered about env variables in Lambda. got it to work ;)
 
 # CloudFront Setup 
-
-# Upload Web_Files to S3 Bucket
