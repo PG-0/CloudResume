@@ -33,6 +33,6 @@ There are 16 parts to the challenge that revolve around using AWS services
 
 14. [Completed] CI/CD (Back end) 
 
-15. [In-Progress] CI/CD (Front end) 
+15. [Completed] CI/CD (Front end) 
 
-16. [To-Do] Blog post 
+16. [In-Progress] Blog post 
