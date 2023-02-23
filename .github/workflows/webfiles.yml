@@ -19,7 +19,7 @@ jobs:
           aws-region: 'us-east-1'
       - name: Sync files to S3 bucket
         run: |
-          aws s3 sync Web_Files s3://${{ secrets.CR_S3_BUCKET }} \
+          aws s3 sync Web_Files s3://pgg-personal-projects \
             --exclude '*' \
             --include '*.html' \
             --include '*.css' \
