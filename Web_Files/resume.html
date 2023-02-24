@@ -9,85 +9,18 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
 
-
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .b-example-divider {
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-    </style>
-
 
     <!-- Custom styles for this template -->
     <link href="BSstyle.css" rel="stylesheet">
 </head>
 
 <body class="text-bg-dark">
-
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    
         <header class="mb-auto">
-            <div>
-                <!-- <h3 class="float-md-start mb-0">;)</h3> -->
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="index.html">Home</a>
-                    <a class="nav-link fw-bold py-1 px-0 active" href="resume.html">Resume</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="#"><s>GitHub</s></a>
-                    <a class="nav-link fw-bold py-1 px-0" href="#"><s>Project Stories</s></a>
-                    <a class="nav-link fw-bold py-1 px-0" href="#"><s>Contact</s></a>
-
-                </nav>
-            </div>
+            <div id="nav-placeholder"></div>
         </header>
-    </div>
+
         <br>
         <div class="resume_body">
             <p><strong>Work Experience</strong></p>
@@ -113,20 +46,30 @@
             <ul>
                 
             </ul>
-            <p><strong>Education</strong></p>
-            <ul><b>B.S Information Technology</b></ul>
+            <p><h4>Education</h4></p>
+            <ul>2011-2015</ul>
+            <ul><i>Bachelor of Science in Information Technology</i></ul>
             <ul>New Jersey Institute of Technology, Newark NJ</ul>
-        
-            <div class="certifications">
-                <p><strong>Certifications</strong></p>
-                <ul class="certifications">
-                    <li class="certifications">AWS Solutions Architect Associate [SAA-CO3], </li>
-                    <li class="certifications">AWS Developer Associate [DVA-C01], </li>
-                    <li class="certifications">Azure Fundamentals [AZ-900], </li>
-                    <li class="certifications"> Professional Scrum Master I [PSM-1]</li>
+            
+            
+            <ul>
+            <p><strong>Certifications</strong></p>
+            <div class="cert-container">
+                <a href="https://www.credly.com/badges/2d4977bb-90f6-4af9-bbd5-1915bc817f33/public_url">
+                    <img src="https://d156cfi3qfyyxr.cloudfront.net/Website+Files/IMGs/aws-certified-solutions-architect-associate.png" alt="AWS-SAA Certification"/>
+                </a>
+                <a href="https://www.credly.com/badges/ad86b171-1d67-43eb-ba66-d73de8dee584/public_url">
+                    <img src="https://d156cfi3qfyyxr.cloudfront.net/Website+Files/IMGs/aws-certified-developer-associate.png" alt="AWS-DVA Certification"/>
+                </a>
+                <a href="https://www.credly.com/badges/5ae911ca-4d30-4b2d-85e6-52fe4d929b71/public_url">
+                    <img src="https://d156cfi3qfyyxr.cloudfront.net/Website+Files/IMGs/microsoft-certified-azure-fundamentals.png" alt="AZ-900 Certification"/>
+                </a>
+                </a>
+                <a href="https://www.credly.com/badges/e6f31032-1604-4e4d-9eb9-0baa0972def7/public_url">
+                    <img src="https://d156cfi3qfyyxr.cloudfront.net/Website+Files/IMGs/professional-scrum-master-i-psm-i.png" alt="PSM-I Certification"/>
+                </a>
             </div>
             </ul>
-        
             <p><strong>Skills</strong></p>
             <ul>
                 <li>Skill 1</li>
@@ -139,7 +82,6 @@
                 <li>BJJ</li>
                 <li>Calisthenics</li>
                 <li>Personal Finance</li>
-                <li>History (Especially Roman)</li>
                 <li>Macro Economics</li>
             </ul>        
         
@@ -151,5 +93,10 @@
 
 
 </body>
-
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+    $.get("nav.html", function(data){
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
 </html>

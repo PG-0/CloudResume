@@ -29,16 +29,3 @@ fetch('https://sw0sdet3ol.execute-api.us-east-1.amazonaws.com/update')
     .catch((error) => {
         console.error('There has been a problem with the fetch operation:', error);
     });
-
-
-// fetch('https://sw0sdet3ol.execute-api.us-east-1.amazonaws.com/retrieve-count')
-//     .then(response => response.json())
-//     .then((data) => {
-//         // Log the data to validate
-//         console.log(data);
-//         // Update the HTML and Parse the JSON. This also removes the quotation marks ""
-//         document.getElementById('replaceMe').innerText = JSON.parse(data);
-//     })
-//     .catch((error) => {
-//         console.error('There has been a problem with the fetch operation:', error);
-//     });
