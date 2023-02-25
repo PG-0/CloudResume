@@ -13,9 +13,6 @@ if (visitCount) {
 }
 counterContainer.innerHTML = counterText + visitCount;
 
-
-
-
 // API Call to update and get DDB visitor count
 fetch('https://sw0sdet3ol.execute-api.us-east-1.amazonaws.com/update')
     .then(() => fetch('https://sw0sdet3ol.execute-api.us-east-1.amazonaws.com/retrieve-count'))
