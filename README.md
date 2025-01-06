@@ -1,6 +1,6 @@
 # CloudResume
 
-After achieving a few AWS certifications, I was looking for practical experience and decided to pursue the Cloud Resume Challenge. The challenge can be found here: https://cloudresumechallenge.dev/docs/the-challenge/aws/
+After achieving a few AWS certifications, I was looking for practical experience and decided to pursue the Cloud Resume Challenge.
 
 ## Architecture
 ![CloudResume_Arch](https://user-images.githubusercontent.com/12003721/230240106-df6cc98a-6a59-4a20-801a-5eb892e2cc13.png)
