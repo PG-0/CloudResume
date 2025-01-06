@@ -37,5 +37,3 @@ There are 16 parts to the challenge that revolve around using AWS services
 14. [Completed] CI/CD (Back end) 
 
 15. [Completed] CI/CD (Front end) 
-
-16. [Completed] Blog post - https://peteg.hashnode.dev/my-journey-on-completing-the-cloud-resume-challenge#heading-phase-0-certification
